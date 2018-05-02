@@ -84,4 +84,34 @@ public class LinkedList {
         return theLink;
     }
 
+
+    /**
+     * Remove specific link by owner
+     */
+    public Link removeLink(String owner) {
+        Link currentLink = firstLink;
+        Link previousLink = firstLink;
+
+        while(!currentLink.owner.equals(owner)) {
+
+            if(currentLink.next == null) {
+                return null;
+            } else {
+                previousLink = currentLink;
+
+                currentLink = currentLink.next;
+            }
+
+        }
+
+        if(currentLink == firstLink) {
+            firstLink = firstLink.next;
+        } else {
+            previousLink.next = currentLink.next;
+        }
+
+        return currentLink;
+
+    }
+
 }
