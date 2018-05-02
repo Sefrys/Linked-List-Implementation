@@ -47,4 +47,41 @@ public class LinkedList {
         return linkReference;
     }
 
+    /**
+     * Cycle through the list and provide the contents.
+     */
+    public void display() {
+        Link theLink = firstLink;
+
+        while(theLink != null) {
+            theLink.display();
+            System.out.println("Next Link: " + theLink.next);
+
+            theLink = theLink.next;
+
+        }
+    }
+
+    /**
+     * Find specific link by owner
+     * @return matching link
+     */
+    public Link find(String owner) {
+        Link theLink = firstLink;
+
+        if(theLink != null) {
+            while(!theLink.owner.equals(owner)) {
+                if(theLink.next == null) {
+                    return null;
+                } else {
+                    theLink = theLink.next;
+                }
+            }
+        } else {
+            System.out.println("Empty LinkedList");
+        }
+
+        return theLink;
+    }
+
 }
