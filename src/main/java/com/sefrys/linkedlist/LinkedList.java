@@ -12,4 +12,12 @@ public class LinkedList {
         firstLink = null;
     }
 
+    /**
+     * Checks if any links exist in the linked list
+     * @return true if empty.
+     */
+    public boolean isEmpty() {
+        return (firstLink == null);
+    }
+
 }
