@@ -6,4 +6,26 @@ package com.sefrys.linkedlist;
  */
 public class DoubleLinkedList {
 
+    Link firstLink;
+    Link lastLink;
+
+    public void insertInFirstPosition(String address, String owner) {
+
+    }
+
+
+    public void insertInLastPosition(String address, String owner) {
+
+    }
+
+    public void insertAfterKey(String address, String owner, int key) {
+
+    }
+
+    public boolean isEmpty() {
+
+        return(firstLink == null);
+
+    }
+
 }
