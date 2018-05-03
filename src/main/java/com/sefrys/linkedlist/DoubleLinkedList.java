@@ -11,6 +11,17 @@ public class DoubleLinkedList {
 
     public void insertInFirstPosition(String address, String owner) {
 
+        Link newLink = new Link("Pułaskiego", "Irek");
+
+        if(isEmpty()) {
+
+            lastLink = firstLink;
+
+        }
+
+        newLink.next = firstLink;
+        firstLink = newLink;
+
     }
 
 
