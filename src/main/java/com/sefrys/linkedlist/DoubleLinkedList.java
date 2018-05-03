@@ -5,4 +5,5 @@ package com.sefrys.linkedlist;
  * Contact: sefrys@gmail.com
  */
 public class DoubleLinkedList {
+
 }
