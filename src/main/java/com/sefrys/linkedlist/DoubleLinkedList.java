@@ -48,7 +48,35 @@ public class DoubleLinkedList {
 
     }
 
-    public void insertAfterKey(String address, String owner, int key) {
+    public boolean insertAfterKey(String address, String owner, int key) {
+
+        Link newLink = new Link(address, owner);
+
+        Link currentLink = firstLink;
+
+        while(!currentLink.owner.equals(owner)) {
+
+            currentLink = currentLink.next;
+
+            if(currentLink == null) return false;
+
+        }
+
+        if(currentLink == lastLink)  {
+
+            newLink.next = null;
+            lastLink = newLink;
+
+        } else {
+
+            newLink.next = currentLink.next;
+            currentLink.next.previous = newLink;
+
+        }
+
+        newLink.previous = currentLink;
+        currentLink.next = newLink;
+        return true;
 
     }
 
