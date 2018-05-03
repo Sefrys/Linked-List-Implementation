@@ -4,11 +4,13 @@ package com.sefrys.linkedlist;
  * Created by Ireneusz Zagan on 02.05.18, 16:43
  * Contact: sefrys@gmail.com
  */
-public class LinkedList {
+public class SingleLinkedList {
 
-    public Link firstLink;
+    Link firstLink;
+    private Integer length = 0;
 
-    LinkedList() {
+
+    SingleLinkedList() {
         firstLink = null;
     }
 
@@ -16,19 +18,20 @@ public class LinkedList {
      * Checks if any links exist in the linked list
      * @return true if empty.
      */
-    public boolean isEmpty() {
+    boolean isEmpty() {
         return (firstLink == null);
     }
 
     /**
      * Creating a new link, and setting it as first in list.
      */
-    public void insertFirstLink(String address, String owner) {
+    void insertFirstLink(String address, String owner) {
        Link newLink = new Link(address, owner);
 
        newLink.next = firstLink;
 
        firstLink = newLink;
+       length++;
     }
 
     /**
@@ -40,6 +43,7 @@ public class LinkedList {
 
         if(!isEmpty()) {
             firstLink = firstLink.next;
+            length--;
         } else {
             System.out.println("Empty linked list");
         }
@@ -78,7 +82,7 @@ public class LinkedList {
                 }
             }
         } else {
-            System.out.println("Empty LinkedList");
+            System.out.println("Empty SingleLinkedList");
         }
 
         return theLink;
@@ -86,7 +90,7 @@ public class LinkedList {
 
 
     /**
-     * Remove specific link by owner
+     * Remove specific link by parameter owner
      */
     public Link removeLink(String owner) {
         Link currentLink = firstLink;
@@ -109,6 +113,8 @@ public class LinkedList {
         } else {
             previousLink.next = currentLink.next;
         }
+
+        length--;
 
         return currentLink;
 
