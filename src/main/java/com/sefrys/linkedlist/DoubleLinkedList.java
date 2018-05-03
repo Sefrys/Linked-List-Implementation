@@ -17,6 +17,10 @@ public class DoubleLinkedList {
 
             lastLink = newLink;
 
+        } else {
+
+            firstLink.previous = newLink;
+
         }
 
         newLink.next = firstLink;
@@ -39,6 +43,8 @@ public class DoubleLinkedList {
         }
 
         lastLink = newLink;
+
+        newLink.previous = lastLink;
 
     }
 
