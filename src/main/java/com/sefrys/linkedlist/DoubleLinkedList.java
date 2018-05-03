@@ -11,11 +11,11 @@ public class DoubleLinkedList {
 
     public void insertInFirstPosition(String address, String owner) {
 
-        Link newLink = new Link("Pułaskiego", "Irek");
+        Link newLink = new Link(address, owner);
 
         if(isEmpty()) {
 
-            lastLink = firstLink;
+            lastLink = newLink;
 
         }
 
@@ -24,8 +24,21 @@ public class DoubleLinkedList {
 
     }
 
-
     public void insertInLastPosition(String address, String owner) {
+
+        Link newLink = new Link(address, owner);
+
+        if(isEmpty()) {
+
+            firstLink = newLink;
+
+        } else {
+
+            lastLink.next = newLink;
+
+        }
+
+        lastLink = newLink;
 
     }
 
@@ -33,9 +46,21 @@ public class DoubleLinkedList {
 
     }
 
-    public boolean isEmpty() {
+    private boolean isEmpty() {
 
         return(firstLink == null);
+
+    }
+
+    public void display() {
+
+        Link theLink = firstLink;
+
+        while(theLink != null) {
+            theLink.display();
+            System.out.println("Next Link: " + theLink.next);
+            theLink = theLink.next;
+        }
 
     }
 
