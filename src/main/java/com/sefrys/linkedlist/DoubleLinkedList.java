@@ -6,8 +6,8 @@ package com.sefrys.linkedlist;
  */
 public class DoubleLinkedList {
 
-    Link firstLink;
-    Link lastLink;
+    private Link firstLink;
+    private Link lastLink;
 
     public void insertInFirstPosition(String address, String owner) {
 
